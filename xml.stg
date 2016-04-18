@@ -1,0 +1,68 @@
+// https://github.com/antlr/stringtemplate4/blob/master/doc/cheatsheet.md
+enterProgram() ::= <<\<?xml version="1.1"?>
+\<program> >>
+
+exitProgram() ::= "\</program>"
+
+exitheading(v) ::= <<\<heading>
+<v>
+\</heading> >>
+
+enterblock() ::= "\<block>"
+
+exitblock() ::= "\</block>"
+
+enterlabel(v) ::= <<\<label name="<v>"> 
+\</label> >>
+
+enterdep(v) ::= <<\<depends on="<v>"> 
+\</depends> >>
+
+enterprocedure(v, values) ::= <<\<procedure name="<v>" arguments="(<values; separator=", ">)"> >>
+exitprocedure() ::= "\</procedure>"
+enterfunction(v) ::= <<\<function name="<v>"> >>
+exitfunction() ::= "\</function>"
+
+enterarray(v, max) ::= <<\<array name="<v>" range="<max>"> 
+\</array> >>
+
+enterif(v) ::= <<\<if value="<v>"> >>
+exitif() ::= "\</if>"
+entercase(v, values) ::= <<\<case value="<v>" arguments="(<values; separator=", ">)"> >>
+exitcase() ::= "\</case>"
+enterfor(v, max) ::= <<\<for value="<v>" range="<max>"> >>
+exitfor() ::= "\</for>"
+enterwith(v) ::= <<\<with value="<v>"> >>
+exitwith() ::= "\</with>"
+enterrepeat(v) ::= <<\<repeat value="<v>"> >>
+exitrepeat() ::= "\</repeat>"
+enterwhile(v) ::= <<\<while value="<v>"> >>
+exitwhile() ::= "\</while>"
+
+globals(v) ::= <<\<varible name="<v>">
+\</varible> >>
+
+label(v) ::= <<\<label name="<v>"> 
+\</label> >>
+
+goto(v) ::= <<\<goto value="<v>"> 
+\</goto> >>
+
+const(v, value) ::= <<\<constant name="<v>">
+<value>
+\</constant> >>
+
+instruction(v) ::= <<\<instruction>
+<v>
+\</instruction> >>
+
+input(v, line) ::= <<\<input line="<line>">
+<v>
+\</input> >>
+
+output(v, line) ::= <<\<output newline="<line>">
+<v>
+\</output> >>
+
+exit() ::= <<\<exit>
+\</exit> >>

@@ -1,0 +1,31 @@
+enterProgram(v) ::= "var <v> = function <v>() {"
+
+exitProgram() ::= <<
+}
+>>
+
+exit() ::= "return;"
+
+enterfunction(v, values) ::= << function <v> (<values; separator=", ">) {>>
+
+globals(values) ::= <<var <values; separator=", "> ;>>
+
+const(v, values) ::= <<var <v> = <values> ;>>
+
+output(v) ::= <<putstr(<v; separator="+">) ;>>
+input (v) ::= <<<v> = eval(readline()); >>
+eoutput(v) ::= <<putstr(<v>) ;>>
+einput (v) ::= <<readline(); >>
+assignment (v, values) ::= <<<v> = <values> ;>>
+goto(v) ::= << goto <v>; >>
+whileLoop(comparator) ::= <<while (<comparator>) {>>
+for(v, start, end, i) ::= <<for (var <v> = <start>; <v> != <end>; <v><i>) {>>
+repeat()  ::= << do  {>>
+exitrepeat(comparator) ::= <<}while (<comparator>); >>
+ifClause(comparator) ::= <<if(<comparator>) { >>
+switch(v) ::= <<switch(<v>) {>>
+case(v) ::= <<case <v>: >>
+exitcase() ::= <<break; >>
+elseClause() ::= " } else { "
+
+procCall(v, values) ::= <<<v>(<values; separator=", ">) ;>>
