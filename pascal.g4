@@ -3,7 +3,7 @@ grammar pascal;
 program
     : programHeading ('INTERFACE'| 'interface')?
       block
-      DOT
+      (DOT)?
     ;
 
 programHeading
