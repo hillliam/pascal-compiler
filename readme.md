@@ -82,6 +82,11 @@ Liam Hill
 * adding `-gui` will display the tree on a GUI
 * clicking a part of the tree will open that subtree in a new window
 
+#### validate program
+
+* to check if a progrm is valid run the command `../java.bat pascal.pascal file.pascal -validate`.
+* adding `-validate` to the end of the command.
+
 ### testing System
 
 * the batch script `br.bat` can be used to test the compiler to see if it is working

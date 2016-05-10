@@ -35,6 +35,8 @@ class Pascal {
                         data.add(args[i]);
                     }
                     searchtree(args[0], data);
+                } else if (args[1].contains("-valid")) {
+                    validate(args[0]);
                 } else {
                     convert(args[0]);
                 }
@@ -66,6 +68,16 @@ class Pascal {
         System.out.println("// xml export of " + inputFile);
         ParseTree tree = gettree(inputFile);
         stringListener ml = new stringListener();
+
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk(ml, tree);
+        System.out.println();
+    }
+    
+        public static void validate(String inputFile) throws Exception {
+        System.out.println("// xml export of " + inputFile);
+        ParseTree tree = gettree(inputFile);
+        validator ml = new validator();
 
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(ml, tree);
