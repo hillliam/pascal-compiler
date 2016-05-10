@@ -13,7 +13,7 @@ class stringListener extends pascalBaseListener {
 
     STGroup stg = new STGroupFile("./xml.stg");
 
-    //ATN options; 
+    //ATN options;
     //PredictionMode a = PredictionMode.LL;
     @Override
     public void enterProgram(pascalParser.ProgramContext ctx) {
@@ -81,17 +81,6 @@ class stringListener extends pascalBaseListener {
     }
 
     @Override
-    public void enterSign(pascalParser.SignContext ctx) {
-        System.out.println("enter sign");
-    }
-
-    @Override
-    public void exitSign(pascalParser.SignContext ctx) {
-        System.out.println("exit sign");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
     public void exitTypeDefinition(pascalParser.TypeDefinitionContext ctx) {
         //System.out.println("exit Type Definition");
         ST st = stg.getInstanceOf("enterarray");
@@ -101,83 +90,6 @@ class stringListener extends pascalBaseListener {
         st.add("max", max);
         System.out.println(st.render());
         //System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterFunctionType(pascalParser.FunctionTypeContext ctx) {
-        System.out.println("enter Function Type");
-    }
-
-    @Override
-    public void exitFunctionType(pascalParser.FunctionTypeContext ctx) {
-        System.out.println("exit Function Type");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterProcedureType(pascalParser.ProcedureTypeContext ctx) {
-        System.out.println("enter Procedure Type");
-    }
-
-    @Override
-    public void exitProcedureType(pascalParser.ProcedureTypeContext ctx) {
-        System.out.println("exit Procedure Type");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterScalarType(pascalParser.ScalarTypeContext ctx) {
-        System.out.println("enter Scalar Type");
-    }
-
-    @Override
-    public void exitScalarType(pascalParser.ScalarTypeContext ctx) {
-        System.out.println("exit Scalar Type");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterStringtype(pascalParser.StringtypeContext ctx) {
-        System.out.println("enter string Type");
-    }
-
-    @Override
-    public void exitStringtype(pascalParser.StringtypeContext ctx) {
-        System.out.println("exit string Type");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterVariantPart(pascalParser.VariantPartContext ctx) {
-        System.out.println("enter Variant Part");
-    }
-
-    @Override
-    public void exitVariantPart(pascalParser.VariantPartContext ctx) {
-        System.out.println("exit Variant Part");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterTag(pascalParser.TagContext ctx) {
-        System.out.println("enter tag");
-    }
-
-    @Override
-    public void exitTag(pascalParser.TagContext ctx) {
-        System.out.println("exit tag");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterVariant(pascalParser.VariantContext ctx) {
-        System.out.println("enter Variant");
-    }
-
-    @Override
-    public void exitVariant(pascalParser.VariantContext ctx) {
-        System.out.println("exit Variant");
-        System.out.println(ctx.getText());
     }
 
     @Override
@@ -236,28 +148,6 @@ class stringListener extends pascalBaseListener {
     public void exitFunctionDeclaration(pascalParser.FunctionDeclarationContext ctx) {
         ST st = stg.getInstanceOf("exitfunction");// DONE
         System.out.println(st.render());
-    }
-
-    @Override
-    public void enterDirective(pascalParser.DirectiveContext ctx) {
-        System.out.println("enter Directive");
-    }
-
-    @Override
-    public void exitDirective(pascalParser.DirectiveContext ctx) {
-        System.out.println("exit Directive");
-        System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterConstList(pascalParser.ConstListContext ctx) {
-        System.out.println("enter Const List");
-    }
-
-    @Override
-    public void exitConstList(pascalParser.ConstListContext ctx) {
-        System.out.println("exit Const List");
-        System.out.println(ctx.getText());
     }
 
     @Override
@@ -329,17 +219,6 @@ class stringListener extends pascalBaseListener {
         ST st = stg.getInstanceOf("exitcase");
         System.out.println(st.render());
         //System.out.println(ctx.getText());
-    }
-
-    @Override
-    public void enterCaseListElement(pascalParser.CaseListElementContext ctx) {
-        System.out.println("enter Case List Element");
-    }
-
-    @Override
-    public void exitCaseListElement(pascalParser.CaseListElementContext ctx) {
-        System.out.println("exit Case List Element");
-        System.out.println(ctx.getText());
     }
 
     @Override
@@ -416,18 +295,6 @@ class stringListener extends pascalBaseListener {
     }
 
     @Override
-    public void enterRecordVariableList(pascalParser.RecordVariableListContext ctx) {
-        System.out.println("enter Record Variable List");
-    }
-
-    @Override
-    public void exitRecordVariableList(pascalParser.RecordVariableListContext ctx) {
-        System.out.println("exit Record Variable List");
-        System.out.println(ctx.getText());
-
-    }
-
-    @Override
     public void exitEmptyreadkey(pascalParser.EmptyreadkeyContext ctx) {
         ST st = stg.getInstanceOf("input"); //DONE
         st.add("v", "");
@@ -492,4 +359,3 @@ class stringListener extends pascalBaseListener {
     }
 
 } // class myListener
-
