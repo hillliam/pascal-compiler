@@ -49,11 +49,15 @@ class Pascal {
         }
 
     } // main
-    public static void displayhelp()
-    {
+
+    public static void displayhelp() {
         System.out.println("-xml  display to tree as xml");
+        System.out.println("-gui  display a gui");
+        System.out.println("-path  display to tree as text");
+        System.out.println("-valid  check the program is valid");
+        System.out.println("-check  detect program optimizations");
     }
-    
+
     public static void jsconvert(String inputFile) throws Exception {
         System.out.println("// source file is " + inputFile);
         ParseTree tree = gettree(inputFile);
@@ -81,6 +85,11 @@ class Pascal {
 
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(ml, tree);
+        if (ml.valid == true) {
+            System.out.println("this is a valid pascal program");
+        } else {
+            System.out.println("this is an invalid pascal program");
+        }
         System.out.println();
     }
 
